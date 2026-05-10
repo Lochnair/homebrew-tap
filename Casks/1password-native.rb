@@ -9,8 +9,6 @@ cask "1password-native" do
 
   depends_on arch: :x86_64
 
-  stage_only true
-
   postflight do
     install_script = <<~EOS
       set -euo pipefail
