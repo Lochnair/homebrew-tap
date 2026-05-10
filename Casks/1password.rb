@@ -41,7 +41,17 @@ cask "1password" do
                      print_stdout: true
     end
 
-    uninstall delete: "/opt/1Password"
+
+    uninstall_preflight do
+      after_remove = "/opt/1Password/after-remove.sh"
+
+      if File.executable?(after_remove)
+        system_command after_remove,
+                     sudo: true,
+                     print_stderr: true,
+                     print_stdout: true
+      end
+    end
 
     zap trash: [
       "~/.cache/1Password",
