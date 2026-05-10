@@ -64,8 +64,8 @@ cask "1password" do
   on_linux do
     linux_arch = Hardware::CPU.arm? ? "arm64" : "x64"
 
-    sha256 arm:   "TODO_ARM64_SHA256",
-           intel: "TODO_X64_SHA256"
+    sha256 arm:   "44dc193aaaf6f5a2e0349607ffae931442822b701506193eaa749ac7e63b0e5e",
+           intel: "b5d86e0497825db7a90cde99f58aacea013994c521ef6b0e26e412bf84288f53"
 
     url "https://downloads.1password.com/linux/tar/stable/#{arch}/1password-#{version}.#{linux_arch}.tar.gz",
         verified: "downloads.1password.com/linux/tar/stable/"
