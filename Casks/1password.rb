@@ -41,17 +41,11 @@ cask "1password" do
                      print_stdout: true
     end
 
-
-    uninstall_preflight do
-      after_remove = "/opt/1Password/after-remove.sh"
-
-      if File.executable?(after_remove)
-        system_command after_remove,
-                     sudo: true,
-                     print_stderr: true,
-                     print_stdout: true
-      end
-    end
+    uninstall script: {
+            executable: "/opt/1Password/after-remove.sh",
+            sudo:       true,
+          },
+          delete: "/opt/1Password"
 
     zap trash: [
       "~/.cache/1Password",
