@@ -25,13 +25,13 @@ AppImages over extracting distro packages.
 From this repository path:
 
 ```sh
-brew tap placeholder-user/linux-gui-casks /path/to/repo
+brew tap lochnair/tap
 brew install --cask 1password-native
 brew install --cask gitkraken
 brew install --cask zen-browser
 ```
 
-Or use the example `Brewfile` after replacing `/path/to/repo`:
+Or use the example `Brewfile`:
 
 ```sh
 brew bundle --file Brewfile
@@ -160,10 +160,8 @@ GitKraken:
 
 ## Exact Solus Test Commands
 
-Replace `/home/lochnair/Work/brew-tap` if the repository is elsewhere:
-
 ```sh
-brew tap placeholder-user/linux-gui-casks /home/lochnair/Work/brew-tap
+brew tap lochnair/tap
 brew install --cask 1password-native
 brew install --cask gitkraken
 brew install --cask zen-browser

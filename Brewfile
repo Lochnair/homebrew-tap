@@ -1,4 +1,4 @@
-tap "placeholder-user/linux-gui-casks", "/path/to/repo"
+tap "lochnair/tap"
 
 cask "1password-native"
 cask "gitkraken"
