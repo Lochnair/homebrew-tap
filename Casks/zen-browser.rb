@@ -55,11 +55,11 @@ cask "zen-browser" do
         > /usr/share/applications/zen-browser.desktop
     EOS
 
-    system_command "/usr/bin/sudo",
-                   args: [
-                     "/bin/bash", "-c", install_script,
-                     "--", staged_path.to_s
-                   ]
+    system_command "/bin/bash",
+                   args:         ["-c", install_script, "--", staged_path.to_s],
+                   sudo:         true,
+                   print_stderr: true,
+                   print_stdout: true
   end
 
   uninstall delete: [

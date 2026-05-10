@@ -34,11 +34,11 @@ cask "1password-native" do
       /opt/1Password/after-install.sh
     EOS
 
-    system_command "/usr/bin/sudo",
-                   args: [
-                     "/bin/bash", "-c", install_script,
-                     "--", staged_path.to_s
-                   ]
+    system_command "/bin/bash",
+                   args:         ["-c", install_script, "--", staged_path.to_s],
+                   sudo:         true,
+                   print_stderr: true,
+                   print_stdout: true
   end
 
   uninstall_preflight do
@@ -66,8 +66,9 @@ cask "1password-native" do
       done
     EOS
 
-    system_command "/usr/bin/sudo",
-                   args: ["/bin/bash", "-c", cleanup_script]
+    system_command "/bin/bash",
+                   args: ["-c", cleanup_script],
+                   sudo: true
   end
 
   uninstall delete: "/opt/1Password"
